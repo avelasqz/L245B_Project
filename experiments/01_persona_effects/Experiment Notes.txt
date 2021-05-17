@@ -1,0 +1,47 @@
+Judith's suggestions on how to run the logic of the experiment:
+
+var stims = [
+  {
+    "domain": "time",
+    "item": "movies",
+    "interlocutors": "ra",
+  },
+  {
+    "domain": "time",
+    "item": "movies",
+    "interlocutors": "ea",
+  },
+...]
+
+this is how the files would look, with all the important information for each trial:
+
+  phone_movies_match.png
+  phone_movies_mismatch.png
+  movies_ra.png
+  movies_ea.png
+
+
+
+in init:
+var conditions = _.shuffle["match","match","match","match","match","match","mismatch","mismatch","mismatch","mismatch","mismatch","mismatch","nearmatch","nearmatch","nearmatch","nearmatch","nearmatch","nearmatch","nearnearmatch","nearnearmatch","nearnearmatch","nearnearmatch","nearnearmatch","nearnearmatch",]
+
+
+makeStims(cond, i) {
+  stims[i].condition = cond;
+}
+
+
+in the trial slides:
+slides.trial = slide({
+  name:"trial",
+  presnt: exp.stimuli,
+  present_handle function(stim) {
+
+    this.stim = stim;
+
+    imagename = concat(this.stim.item,"_",this.stim.interlocutors, ".png") // concat is not the actual syntax
+    phoneimage = ...
+  }
+})
+
+the idea of the above is to, in creating stimuli, give the pieces that will change. Then when init runs, it will shuffle the match conditions, and a cond term will be added to each stiumulus; and as each stimulus runs in the trial, it takes the match information, the person information, and the item information, and produces the correct phone image and complete conversation image.

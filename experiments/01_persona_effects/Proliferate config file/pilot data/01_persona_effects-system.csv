@@ -1,0 +1,5 @@
+workerid,proliferate.condition,Browser,OS,screenH,screenW,error
+6,condition1,Chrome,Windows,1003,1504,
+5,condition1,Chrome,Windows,1080,1920,
+3,condition1,Firefox,Windows,1080,1920,
+4,condition1,Chrome,Windows,1080,1920,
